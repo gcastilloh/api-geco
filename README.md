@@ -1,6 +1,7 @@
 # Instalacion
 
-En el desarrollo de Geco4 se considera Django (basado en python como lenguaje de programación), la plataforma empleada para el desarrollo es Visualstudio code. 
+En el contexto del desarrollo de Geco3 (basado en python como lenguaje de programación) se considera Django como base del entorno de desarrollo. Las apps que se desarrollen para interactuar con geco también usaran Django como su entorno de desarrrollo.
+
 El proceso puede consultarse en el documento de [instalación](./documentacion/instalacion/)
 
 //copiar a ese directorio
@@ -17,6 +18,12 @@ Posteriormente debemos de crear un entorno virtual con nombre env:
 
 ```sh
 ptyhon3 -m venv env
+```
+
+Activamos el entorno virtual al ubicarnos en el directorio y usar el comando
+
+```sh
+source env/bin/activate
 ```
 
 Después se procede a instalar los siguientes paquetes django, djangorestframework y requests
@@ -37,7 +44,7 @@ Añadir detalle
 python manage.py migrate
 ```
 
-Añadir detalle
+Al correr este código podemos hacer una prueba rápida para comprobar que al identificarnos el token se obtiene correctamente, los diferentes tipos de solicitudes que se pueden hacer al geco3 y las respuestas que se obtienen.
 
 ```sh
 python test_basico.py
@@ -47,6 +54,11 @@ Añadir detalle
 
 ```sh
 python manage.py check
+```
+
+Con este comando activamos localmente el servidor de nuestra aplicación en el puerto 8500
+
+```sh
 python manage.py runserver 8500
 ```
 
