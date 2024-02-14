@@ -16,18 +16,15 @@ def procesar(request, corpus_id):
     response = requests.get(url, headers=headers )
     data_json = response.json()
     data = data_json.get('data', [])
-    print(data)
     for item in data:
         id_archivo = item['id']
         #obtiene el contenido del documento cuyo corpus y id se proporciona
         id = corpus_id
         doc_id = id_archivo
-        #print(f'id: {id} doc: {doc_id}')
         url, headers = geco_url(request, f'proyectos/apidocs/corpus/{id}/{doc_id}')
         headers = {'Authorization': 'Token ' + request.session['api_token']}
         response = requests.get(url, headers=headers )
         JSONdocsCorpus = response.json()   
-        #print(acortar_cadena(JSONdocsCorpus['data'],40))     
 
     # Luego, pasa el objeto Corpus a tu plantilla HTML
     context = {

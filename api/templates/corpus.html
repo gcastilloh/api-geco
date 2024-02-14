@@ -17,26 +17,50 @@
 </head>
 <body>
   <div class="container">
-    <h1>Mis Proyectos ({{usuario}})</h1>
+    <h1>Usuario: {{usuario}}</h1>
+    <h1>Proyectos públicos:</h1>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nombre del Proyecto</th>
-                <th>Público</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            {% for proyecto in data %}
-            <tr>
-                <td>{{ proyecto.id }}</td>
-                <td>{{ proyecto.nombre }}</td>
-                <td>{{ proyecto.publico }}</td>
-                <td><a href="{% url 'procesar_corpus' proyecto.id %}">Ver Detalles</a></td>
-            </tr>
+            {% for proyecto in publicos %}
+                  <tr>
+                      
+                      <td>{{ proyecto.id }}</td>
+                      <td>{{ proyecto.nombre }}</td>
+                      <td><a href="{% url 'procesar_corpus' proyecto.id %}">Ver Detalles</a></td>
+                  </tr>
             {% endfor %}
         </tbody>
     </table>
+    {%if colabora%}
+    <h1>Proyectos donde colabora o es propietario:</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Proyecto</th>
+                <th></th>
+            </tr>
+        </thead>
+          <tbody>
+              {% for proyecto in colabora %}
+              <tr>
+                  <td>{{ proyecto.id }}</td>
+                  <td>{{ proyecto.nombre }}</td>
+                  <td><a href="{% url 'procesar_corpus' proyecto.id %}">Ver Detalles</a></td>
+                  
+              </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+    {%endif%}
+        
 </div>
 </body>
 </html>
