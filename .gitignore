@@ -6,6 +6,9 @@
 *.log
 *.pot
 *.pyc
+*.wav
+*.xml
+
 __pycache__/
 
 **/tmp/
