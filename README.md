@@ -62,6 +62,8 @@ Con este comando activamos localmente el servidor de nuestra aplicación en el p
 python manage.py runserver 8500
 ```
 
+Añadir que en test basico se puede consultar que tipo de solicitudes se pueden
+
 En el navegador accesamos
 
 http://127.0.0.1:8500/home
