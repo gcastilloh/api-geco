@@ -55,7 +55,7 @@ De activarse correctamente, en nuestra terminal se verá (env) al inicio de la l
 Después se procede a instalar los siguientes paquetes django, djangorestframework y requests
 
 ```sh
-pip install django djangorestframweork requests
+pip install django djangorestframework requests
 ```
 
 En el contexto de desarrollar en el framework de Django, "manage.py" es un fichero central para poder interactuar con el proyecto en cuestión.
