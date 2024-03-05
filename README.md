@@ -147,3 +147,29 @@ python test_basico.py
 Si queremos hacer una aplicación basada en api-geco debemos leer fichero para definir el tipo de solicitudes que estaremos autorizados a hacer.
 
 //Añadir que en test basico se puede consultar que tipo de solicitudes se pueden
+
+# Modificar este repositorio para desarrollar una nueva APP
+
+Para trabajar con este repositorio vale la pena considerar algunos aspectos generales del desarrollo en Django. En primer lugar, django funciona bajo una arquitectura model-templates-view.
+
+En este sentido, el front end de nuestra aplicación corresponderá a lo que se encuentra en el directorio templates en /api/templates
+
+Una parte del código del backend se encuentra por su lado en /api/views
+
+En tercer lugar, podemos configurar el manejo de nuestra base de datos en el directorio /api/models
+
+En términos muy amplios, el repositorio api-geco está pensado que el desarrollador se enfoque en modificar estos dos directorios para ofrecer una nueva aplicación.
+
+## Front-end (templates)
+
+Una vez que hemos seguido los pases de la sección "instalación", modificar el front-end para nuestra aplicación es la parte más sencilla de trabajar en django.
+
+Una vez ubicados en el directorio api-geco/api/templates podemos editar los documentos html de manera directa y los cambios se hacen en tiempo real en caso de estar corriendo el servidor.
+
+## Views
+
+En el directorio api-geco/api/views podemos ver ficheros de código escrito en python mediante el cuál podemos escribir una buena parte del código con el que funcionará la app. 
+Vale la pena mencionar que estos ficheros usan como argumento variables que están definidas fuera de ellos, en otras partes del repositorio. Por ejemplo, los end-points para hacer solicitudes a la API. Más adelante se profundizará en ello.
+
+## Models
+
